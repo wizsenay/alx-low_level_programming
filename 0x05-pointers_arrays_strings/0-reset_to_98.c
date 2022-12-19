@@ -7,19 +7,19 @@
 
 void reset_to_98(int *n)
 {
-	int n;
+	int a;
 	int *prt;
 
-	prt = &n
-	n = 420
+	a = 420
+	prt = &a
 
 	_putchar("%d", n);
 	_putchar("\n");
 
-	*p = 98;
+	*prt = 98;
 
-	_puthar("%d", n);
-	_pitchar("\n");
+	_putchar("%d", n);
+	_putchar("\n");
 
 	return (0);
 }
