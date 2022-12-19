@@ -2,12 +2,15 @@
 /**
  * _strlen -  length of a string
  * @s: string or character
- * Return: 0
+ * Return: a variale
  */
 
 int _strlen(char *s)
 {
-	*s[];
-	strlen(*s);
-	return (0);
+	int a = 0;
+
+	while (s[a] != '\0')
+		a++;
+
+	return (a);
 }
