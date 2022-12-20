@@ -1,4 +1,4 @@
-#inlude "main.h"
+#include "main.h"
 /**
  * rev_string - revers string
  * @s: pointer value
@@ -15,7 +15,7 @@ void rev_string(char *s)
 	while (b < a--)
 	{
 		str = s[b];
-		s[b++] = a[a];
-		a[a] = str;
+		s[b++] = s[a];
+		s[a] = str;
 	}
 }
