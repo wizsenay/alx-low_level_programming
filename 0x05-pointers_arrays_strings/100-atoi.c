@@ -21,5 +21,5 @@ int _atoi(char *s)
 		}
 		else if (n)
 			break;
-		s++
+		s++;
 	}
