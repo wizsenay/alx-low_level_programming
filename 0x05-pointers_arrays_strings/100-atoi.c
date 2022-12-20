@@ -23,3 +23,7 @@ int _atoi(char *s)
 			break;
 		s++;
 	}
+	if (a < 0)
+		b = (-b);
+	return (b);
+}
