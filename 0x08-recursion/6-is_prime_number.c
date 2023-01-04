@@ -4,7 +4,7 @@
  * @n: input int
  * Return: int valure
  */
-int divise(int b, int a);
+
 int is_prime_number(int n)
 {
 	int a = 2;
