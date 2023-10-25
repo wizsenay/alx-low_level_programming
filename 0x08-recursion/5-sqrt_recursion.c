@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
  * @n: input number
  * @i: the input multiple]
  * Return: squar root
- */ 
+ */
 int _sqrt(int n, int i)
 {
 	int s;
