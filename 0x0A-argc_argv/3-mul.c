@@ -3,7 +3,7 @@
  * main - a program that multiplies two numbers.
  * @argc: count the string
  * @argv: input numbers
- * Rrturn: (0) if it sucessfully if not (1)
+ * Return: (0) if it sucessfully if not (1)
  */
 
 int main(int argc, char *argv[])
@@ -21,4 +21,4 @@ int main(int argc, char *argv[])
 		mul = mul * atoi(argv[i]);
 	printf("%d\n", mul);
 	return (0);
-}	
+}
