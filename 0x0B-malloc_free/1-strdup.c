@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * _strduo - returns a pointer to a newly allocated space in memory
+ * _strdup - returns a pointer to a newly allocated space in memory
  * @str: is input string
  * Return: a pointer to a newly allocated space in memory
  */
