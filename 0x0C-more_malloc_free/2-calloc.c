@@ -8,19 +8,12 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *cal, *con;
-	unsigned int coun;
+	void *cal;
 
 	if (nmemb <= 0 || size <= 0)
 		return (NULL);
-	for (coun = 1; coun < nmemb; coun++)
-	{
-		cal = malloc(size);
-		if (cal == NULL)
-			return (NULL);
-		return (cal);
-		free(cal);
-	}
-	con = malloc(size);
-	return (con);
+	cal = malloc(nmemb * size);
+	if (cal == NULL)
+		return (NULL);
+	return (cal);
 }
