@@ -18,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		cal = malloc(size);
 		if (cal == NULL)
 			return (NULL);
-		return (cal);
+		return(cal);
 		free(cal);
 	}
 	con = malloc(size);
