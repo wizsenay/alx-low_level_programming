@@ -6,9 +6,9 @@
  * Return: the number of nodes
  */
 
-size_t print_list(list_t *h)
+size_t print_list(const list_t *h)
 {
-	list_t *newNod, *temp;
+	const list_t *newNod, *temp;
 	size_t i = 0;
 
 	newNod = h;
