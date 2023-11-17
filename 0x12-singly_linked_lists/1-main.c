@@ -14,7 +14,10 @@ int main(void)
     list_t *new;
     list_t hello = {"World", 5, NULL};
     size_t n;
+	list_t *nul = NULL;
 
+	n = list_len(nul);
+	printf("-> %lu elements\n", n);
     head = &hello;
     new = malloc(sizeof(list_t));
     if (new == NULL)

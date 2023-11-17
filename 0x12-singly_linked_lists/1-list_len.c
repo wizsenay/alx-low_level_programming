@@ -10,6 +10,8 @@ size_t list_len(const list_t *h)
 	const list_t *newNod, *temp;
 	size_t i = 0;
 
+	if (h == NULL)
+		return (i);
 	newNod = h;
 	while (newNod->next != NULL)
 	{
