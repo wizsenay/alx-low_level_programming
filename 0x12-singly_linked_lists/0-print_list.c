@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * print_list - prints all the elements of a list_t list.
@@ -11,6 +12,8 @@ size_t print_list(const list_t *h)
 	const list_t *newNod, *temp;
 	size_t i = 0;
 
+	if (h == NULL)
+		exit(0);
 	newNod = h;
 	while (newNod->next != NULL)
 	{
