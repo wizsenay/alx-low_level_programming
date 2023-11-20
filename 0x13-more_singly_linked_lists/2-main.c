@@ -22,5 +22,8 @@ int main(void)
     add_nodeint(&head, 402);
     add_nodeint(&head, 1024);
     print_listint(head);
+	head = NULL;
+	add_nodeint(&head, 5);
+print_listint(head);	
     return (0);
 }
