@@ -11,7 +11,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n;
+	ssize_t n, i;
 	int file_des;
 	char *f_name;
 
@@ -24,9 +24,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_des == -1)
 		return (0);
 	n = read(file_des, f_name, letters);
-	if (n < 0)
+	if (n == -1)
 		return (0);
-	write(STDOUT_FILENO, f_name, letters);
+	i = write(STDOUT_FILENO, f_name, letters);
+	if (i == -1)
+		return (0);
 	free(f_name);
 	return (n);
 }
