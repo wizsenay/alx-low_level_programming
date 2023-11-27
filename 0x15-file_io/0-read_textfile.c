@@ -22,12 +22,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	file_des = open(filename, O_RDWR);
 	if (file_des == -1)
+	{
+		close(file_des);
+		free(f_name);
 		return (0);
+	}
 	n = read(file_des, f_name, letters);
 	if (n == -1)
+	{
+		close(file_des);
+		free(f_name);
 		return (0);
+	}
 	if (write(STDOUT_FILENO, f_name, letters) < n)
+	{
+		close(file_des);
+		free(f_name);
 		return (0);
+	}
 	close(file_des);
 	free(f_name);
 	return (n);
