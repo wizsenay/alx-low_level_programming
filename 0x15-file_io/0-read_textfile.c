@@ -11,13 +11,13 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n, i;
+	ssize_t n;
 	int file_des;
 	char *f_name;
 
+	if (filename == NULL)
+		return (0);
 	f_name = malloc(sizeof(size_t) * letters);
-	if (f_name == NULL)
-		exit(98);
 	if (filename == NULL)
 		return (0);
 	file_des = open(filename, O_RDWR);
@@ -26,8 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	n = read(file_des, f_name, letters);
 	if (n == -1)
 		return (0);
-	i = write(STDOUT_FILENO, f_name, letters);
-	if (i == -1)
+	if (write(STDOUT_FILENO, f_name, letters) < n)
 		return (0);
 	free(f_name);
 	return (n);
