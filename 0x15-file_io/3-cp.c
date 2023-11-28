@@ -22,20 +22,20 @@ char *file_from(const char *filename)
 	n = open(filename, O_RDONLY);
 	if (n == -1)
 	{
-		dprintf(1, "Error: Can't read from file %s\n", filename);
+		dprintf(2, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	i = read(n, cope, 1024);
 	if (i == -1)
 	{
 		close(n);
-		dprintf(1, "Error: Can't read from file %s\n", filename);
+		dprintf(2, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	c = close(n);
 	if (c == -1)
 	{
-		dprintf(1, "Error: Can't close fd %i\n", n);
+		dprintf(2, "Error: Can't close fd %i\n", n);
 		exit(100);
 	}
 	return (cope);
@@ -57,13 +57,13 @@ void file_to(const char *new_file, char *content_file)
 	n = open(new_file, O_WRONLY | O_CREAT | O_TRUNC);
 	if (n == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", new_file);
+		dprintf(2, "Error: Can't write to %s\n", new_file);
 		exit(99);
 	}
 	c = chmod(new_file, 0664);
 	if (c == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", new_file);
+		dprintf(2, "Error: Can't write to %s\n", new_file);
 		close(n);
 		exit(99);
 	}
@@ -72,13 +72,13 @@ void file_to(const char *new_file, char *content_file)
 	b = write(n, content_file, i);
 	if (b == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", new_file);
+		dprintf(2, "Error: Can't write to %s\n", new_file);
 		exit(99);
 	}
 	col = close(n);
 	if (col == -1)
 	{
-		dprintf(1, "Error: Can't close fd %i\n", n);
+		dprintf(2, "Error: Can't close fd %i\n", n);
 		exit(100);
 	}
 
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		write(1, "Usage: cp file_from file_to\n", 29);
+		write(2, "Usage: cp file_from file_to\n", 29);
 		exit(97);
 	}
 	bufer = file_from(argv[1]);
