@@ -40,7 +40,6 @@ char *file_from(const char *filename)
 		free(cope);
 		exit(100);
 	}
-	free(cope);
 	return (cope);
 }
 /**
@@ -83,7 +82,7 @@ void file_to(const char *new_file, char *content_file)
 		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
 	}
-
+	free(content_file);
 }
 /**
  * main - cope the content of a file to another file.
