@@ -81,7 +81,7 @@ void file_to(const char *new_file, char *content_file)
 	col = close(n);
 	if (col == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", n);
+		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
 	}
 
