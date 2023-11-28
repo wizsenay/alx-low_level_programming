@@ -60,12 +60,14 @@ void file_to(const char *new_file, char *content_file)
 	if (n == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", new_file);
+		free(content_file);
 		exit(99);
 	}
 	c = chmod(new_file, 0664);
 	if (c == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", new_file);
+		free(content_file);
 		close(n);
 		exit(99);
 	}
@@ -75,11 +77,13 @@ void file_to(const char *new_file, char *content_file)
 	if (b == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", new_file);
+		free(content_file);
 		exit(99);
 	}
 	if (close(n) != 0)
 	{
 		dprintf(2, "Error: Can't close fd\n");
+		free(content_file);
 		exit(100);
 	}
 	free(content_file);
