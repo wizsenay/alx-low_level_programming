@@ -40,6 +40,7 @@ char *file_from(const char *filename)
 		free(cope);
 		exit(100);
 	}
+	free(cope);
 	return (cope);
 }
 /**
