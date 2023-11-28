@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		write(STDERR_FILENI, "Usage: cp file_from file_to\n", 29);
+		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 29);
 		exit(97);
 	}
 	bufer = file_from(argv[1]);
