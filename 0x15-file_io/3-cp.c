@@ -14,7 +14,7 @@ char *file_from(const char *filename);
 char *file_from(const char *filename)
 {
 	char *cope;
-	int n, c, i;
+	int n, i;
 
 	cope = malloc(1024);
 	if (cope == NULL)
@@ -34,8 +34,7 @@ char *file_from(const char *filename)
 		free(cope);
 		exit(98);
 	}
-	c = close(n);
-	if (c == -1)
+	if (close(n) != 0)
 	{
 		dprintf(2, "Error: Can't close fd %i\n", n);
 		free(cope);
@@ -53,7 +52,7 @@ void file_to(const char *new_file, char *content_file);
 
 void file_to(const char *new_file, char *content_file)
 {
-	int n, c, col;
+	int n, c;
 	size_t i = 0;
 	ssize_t b;
 
@@ -78,8 +77,7 @@ void file_to(const char *new_file, char *content_file)
 		dprintf(2, "Error: Can't write to %s\n", new_file);
 		exit(99);
 	}
-	col = close(n);
-	if (col == -1)
+	if (close(n) != 0)
 	{
 		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
