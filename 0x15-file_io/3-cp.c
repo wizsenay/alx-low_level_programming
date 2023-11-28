@@ -23,6 +23,7 @@ char *file_from(const char *filename)
 	if (n == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", filename);
+		free(cope);
 		exit(98);
 	}
 	i = read(n, cope, 1024);
@@ -30,12 +31,14 @@ char *file_from(const char *filename)
 	{
 		close(n);
 		dprintf(2, "Error: Can't read from file %s\n", filename);
+		free(cope);
 		exit(98);
 	}
 	c = close(n);
 	if (c == -1)
 	{
 		dprintf(2, "Error: Can't close fd %i\n", n);
+		free(cope);
 		exit(100);
 	}
 	return (cope);
