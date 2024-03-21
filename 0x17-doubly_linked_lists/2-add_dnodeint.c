@@ -13,7 +13,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	temp = malloc(sizeof(dlistint_t));
 	if (temp == NULL)
 	{
-		dprintf(2, "Error: Can't malloc\n");
 		return (NULL);
 	}
 	temp->n = n;
