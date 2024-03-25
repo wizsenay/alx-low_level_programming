@@ -2,14 +2,11 @@
 #define MAIN_H
 
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
 
 int add(int a, int b);
 int sub(int a, int b);
 int mul(int a, int b);
-/*int div(int a, int b);*/
+int div(int a, int b);
 int mul(int a, int b);
 int _putchar(char c);
 int _islower(int c);
